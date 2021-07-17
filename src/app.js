@@ -39,10 +39,11 @@ app.get('/weather',(req,res)=>{
         return res.send({message: 'An error occured'})
         else if(data)
         {
-            if(!data.success)
+            if(data.success==false)
             return res.send({
                 message: 'Try for different location' 
             })
+            else
             return res.send({
                 city: data.location.name,
                 state: data.location.region,
