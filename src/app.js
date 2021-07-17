@@ -7,6 +7,7 @@ const hbs=require('hbs');
 const pathTopublic=path.join(__dirname,'../public')
 const partialPaths=path.join(__dirname,'../templates/partials');
 const pathToViews=path.join(__dirname,'../templates/views');
+const port=process.env.PORT||3000;
 hbs.registerPartials(partialPaths);
 app.use(express.static(pathTopublic));
 app.set('view engine','hbs')
@@ -68,6 +69,6 @@ app.get('/help',(req,res)=>{
 app.get('*',(req,res)=>{
     res.send('404 Page')
 })
-app.listen(3000,()=>{
+app.listen(port,()=>{
     console.log("starting")
 })
