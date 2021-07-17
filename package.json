@@ -13,8 +13,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "express": "*",
-    "body-parser": "*",
-    "bcrypt": "^0.8.5"
+    "express": "^4.17.1",
+    "hbs": "^4.1.2",
+    "request": "^2.88.2"
   }
 }
