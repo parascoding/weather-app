@@ -10,6 +10,9 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "request": "^2.88.2"
-  }
+    "express":"*",
+    "body-parser":"*",
+    "bcrypt": "^0.8.5"
+ }
+
 }
