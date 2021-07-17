@@ -32,12 +32,17 @@ app.get('/weather',(req,res)=>{
     return res.send({
         error: 'Must provide a address'
     })
+
     const address=req.query.address;
     forecast(address,(error,data)=>{
         if(error)
         return res.send({message: 'An error occured'})
         else if(data)
         {
+            if(!data.success)
+            return res.send({
+                message: 'Try for different location' 
+            })
             return res.send({
                 city: data.location.name,
                 state: data.location.region,

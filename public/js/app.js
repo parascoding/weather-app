@@ -9,12 +9,14 @@ const search=document.querySelector('input')
 weatherForm.addEventListener('submit',(e)=>{
     e.preventDefault();
     message1.textContent='Loading';
+    message2.textContent='';
     const location=search.value
     fetch('http://localhost:3000/weather?address='+location).then((response)=>{
     response.json().then((data)=>{
+    
         message1.textContent='';
         if(data.error)
-        message2.textContent='OOPs, Try another location.'
+        message2.textContent='Please enter the correct location.';
         else
         {
             message2.textContent=data.message;
