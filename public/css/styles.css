@@ -12,8 +12,8 @@ body{
     flex-grow: 1;
 }
 footer{
-    color: #888888;
-    border-top: 1px solid #eeeeee;
+    color: #000000;
+    /* border-top: 1px solid #eeeeee; */
     margin-top: 16px;
     padding: 16px 0;
 }
@@ -22,13 +22,20 @@ h1{
     margin-bottom: 16px;
 }
 a {
-    color: #888888;
+    color: #000000;
     margin-right: 16px;
     text-decoration: none;  
+    
 }
 input{
-    border: 1px solid #cccccc;
+    border: 1px solid #1b1a1a;
     padding: 8px;
+    background: none;
+    /* font-size: ; */
+    ;
+}
+::placeholder{
+    color: black;
 }
 button{
     cursor:pointer;
@@ -37,4 +44,18 @@ button{
     color: white;
     padding: 8px;
 
+}
+p {
+    font-size: large;
+    text-decoration: solid;
+}
+#message3{
+    margin-top: -2%;
+}
+body{
+    background-image: url('bgimage3.jpg');
+    -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }

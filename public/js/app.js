@@ -10,6 +10,8 @@ weatherForm.addEventListener('submit',(e)=>{
     e.preventDefault();
     message1.textContent='Loading';
     message2.textContent='';
+    message3.textContent='';
+    aalert.textContent='';
     const location=search.value
     fetch('/weather?address='+location).then((response)=>{
     response.json().then((data)=>{
@@ -19,7 +21,10 @@ weatherForm.addEventListener('submit',(e)=>{
         message2.textContent='Please enter the correct location.';
         else
         {
-            message2.textContent=data.message;
+            message2.textContent=data.message1;
+            message3.textContent=data.message2;
+            aalert.textContent='No alert as of now'
+
         }
     })
 })
