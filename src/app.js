@@ -41,37 +41,37 @@ app.get('/weather',(req,res)=>{
     
     if(!req.query.address)
     {
-        // var tempAdd;
-        // const url1='https://ipgeolocation.abstractapi.com/v1/?api_key=737de9383c7b4df3bc106a1f2c8265a1'
-        // request({url:url1, json:true},(error,response)=>{
+        var tempAdd;
+        const url1='https://ipgeolocation.abstractapi.com/v1/?api_key=737de9383c7b4df3bc106a1f2c8265a1'
+        request({url:url1, json:true},(error,response)=>{
             
-        //     forecast(response.body.city,(error,data)=>{
-        //         if(error)
-        //         return res.send({message: 'An error occured'})
-        //         else if(data)
-        //         {
-        //             if(data.success==false)
-        //             return res.send({
-        //                 message: 'Try for different location' 
-        //             })
-        //             else
-        //             return res.send({
-        //                 city: data.location.name,
-        //                 state: data.location.region,
-        //                 country: data.location.country,
-        //                 temp: data.current.temperature,
-        //                 weather: data.current.weather_descriptions[0],
-        //                 message1: "It's "+data.current.temperature+"°C in "+data.location.name+", "+data.location.country+"\n",
-        //                 message2:"Current weather - "+data.current.weather_descriptions[0]
+            forecast(response.body.city,(error,data)=>{
+                if(error)
+                return res.send({message: 'An error occured'})
+                else if(data)
+                {
+                    if(data.success==false)
+                    return res.send({
+                        message: 'Try for different location' 
+                    })
+                    else
+                    return res.send({
+                        city: data.location.name,
+                        state: data.location.region,
+                        country: data.location.country,
+                        temp: data.current.temperature,
+                        weather: data.current.weather_descriptions[0],
+                        message1: "It's "+data.current.temperature+"°C in "+data.location.name+", "+data.location.country+"\n",
+                        message2:"Current weather - "+data.current.weather_descriptions[0]
         
-        //             })
-        //         }
-        //     })
-        // })   
-        return res.send({
-            message1: "Try for different location"
-        })
-        console.log("req not flond");
+                    })
+                }
+            })
+        })   
+        // return res.send({
+        //     message1: "Try for different location"
+        // })
+        // console.log("req not flond");
     }
     else
     {
@@ -92,7 +92,8 @@ app.get('/weather',(req,res)=>{
                     country: data.location.country,
                     temp: data.current.temperature,
                     weather: data.current.weather_descriptions[0],
-                    message1: "It's "+data.current.temperature+" in "+data.location.name+", "+data.location.country+" and it's "+data.current.weather_descriptions[0]+" here."
+                    message1: "It's "+data.current.temperature+"°C in "+data.location.name+", "+data.location.country+"\n",
+                    message2:"Current weather - "+data.current.weather_descriptions[0]
     
                 })
             }
